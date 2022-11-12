@@ -32,6 +32,14 @@
 
 //CODE HERE
 
+let pizza ={
+    name: 'cheese and olive';
+    price: 8.99;
+    category: "Entree";
+    popularity: 5;
+    rating: 10;
+    tags: ["Yummy!", "High cal", "cheese", "olives", "large", "meduim", "small"];
+}
 
 
 //////////////////PROBLEM 2////////////////////
