@@ -24,8 +24,11 @@
 //CODE HERE
 
 
+// const greetUser = (username) =>{
+//     return(`Welcome back ${username}`); //not sure if it should be this.username or not
+// }
 
-
+// console.log(username("Andrew")); // not sure if syntax right here
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -51,7 +54,13 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-
+// function canWeDeliver(zipCode){
+//     if(zipCode === deliveryAreaZipCodes){ //I fell this part isnt right
+//         return("You are in delivery range!") //not sure if it should be return or console.log
+//     }else{
+//         return("Sorry, we cant deliver to that address.")
+//     } //now thinking this is all wrong. Need to use a loop somehow
+// }
 
 /* 
     Problem 2 Continued
@@ -108,8 +117,10 @@ const deals = [
 
 //CODE HERE
 
+let title = title.replace('15% Off!', '10% Off!');
+console.log(deals);
 
-
+//ReferenceError: Cannot access 'title' before initialization
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -124,3 +135,6 @@ const deals = [
 */
 
 //CODE HERE
+
+desc = desc.replace('March', 'April');
+console.log(deals); //dont forget whitespace

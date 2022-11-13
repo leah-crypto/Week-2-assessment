@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -32,15 +31,14 @@
 
 //CODE HERE
 
-let pizza ={
-    name: 'cheese and olive';
-    price: 8.99;
-    category: "Entree";
-    popularity: 5;
-    rating: 10;
-    tags: ["Yummy!", "High cal", "cheese", "olives", "large", "meduim", "small"];
-}
-
+let pizza = {
+  name: "cheese and olive",
+  price: 8.99,
+  category: "Entree",
+  popularity: 5,
+  rating: 10,
+  tags: ["Yummy!", "High cal", "cheese", "olives", "large", "meduim", "small"],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -51,7 +49,8 @@ let pizza ={
 */
 
 //CODE HERE
-
+let pop = pizza.popularity;
+console.log(pop);
 
 /*
     Second, log the second tag in your pizza's
@@ -61,8 +60,8 @@ let pizza ={
 */
 
 //CODE HERE
-
-
+let cost = pizza["price"];
+console.log(cost);
 /*
     Third, destructure the price off of the
     pizza object.
@@ -72,6 +71,9 @@ let pizza ={
 
 //CODE HERE
 
+let { price: newPrice } = pizza; //not working
+//pizza.price = '7.99';
+console.log(newPrice);
 
 /*
     Fourth, and last, destructure the category
@@ -81,8 +83,8 @@ let pizza ={
 */
 
 //CODE HERE
-
-
+let { category: newCategory } = pizza;
+console.log(newCategory);
 //////////////////PROBLEM 3////////////////////
 /* 
     Create an array with about 5 objects in it.
@@ -97,7 +99,48 @@ let pizza ={
 
 //CODE HERE
 
-
+let foodArr = [
+  {
+    name: "hamburger",
+    price: 7.99,
+    category: "Entree",
+    popularity: 6,
+    rating: 9,
+    tags: "Hot",
+  },
+  {
+    name: "ice-cream",
+    price: 4.99,
+    category: "Dessert",
+    popularity: 10,
+    rating: 10,
+    tags: "Cold",
+  },
+  {
+    name: "French Fries",
+    price: 2.99,
+    category: "Side",
+    popularity: 3,
+    rating: 2,
+    tags: "Hot",
+  },
+  {
+    name: "Steak",
+    price: 18.99,
+    category: "Entree",
+    popularity: 10,
+    rating: 8,
+    tags: "Hot",
+  },
+  {
+    name: "Sushi",
+    price: 10.99,
+    category: "Entree",
+    popularity: 8,
+    rating: 10,
+    tags: "Cold",
+  },
+];
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -113,10 +156,17 @@ let pizza ={
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function (foodArr) {
+  return foodArr.tags === "Cold";
+});
 
+console.log(filteredFood);
 
-
+// console.log(callback);                       not understandingduring this code, but finally got it above
+//  filteredFood(function(){
+//     return tag;
+//  })
+// console.log(filteredFood());
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -157,7 +207,6 @@ let pizza ={
 */
 
 //CODE HERE
-
 
 /*
     Invoke the `filterByProperty` function passing
