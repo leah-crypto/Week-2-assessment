@@ -140,14 +140,14 @@ Finally I of course added in the first and last name of the customer and also a 
 */
 
 //CODE HERE
-// const customer = {
-//     transactionId: Ghki780,
-//     cardNum: 78547909,
-//     exp: 10/26,
-//     cvc: 567,
-//     zip: 67893,
-//     email: "jonDoe@gmail.com",
-//     phone: 817-545-9875,
-//     firstName: "Jon",
-//     lastName: "Doe"
-// }
+const customer = {
+    transactionId: "Ghki780",
+    cardNum: 78547909,
+    exp: 10/26,
+    cvc: 567,
+    zip: 67893,
+    email: "jonDoe@gmail.com",
+    phone: 817-545-9875,
+    firstName: "Jon",
+    lastName: "Doe"
+}
