@@ -206,8 +206,35 @@ console.log(filteredFood);
     Return the filtered array from the entire function
 */
 
-//CODE HERE
 
+//we need  use filer method to filter an empty array
+//we need  create a function called fliterByProperty that takes in the three pramaters
+//check if type is above or below
+//property needs to be a string that is rating, pop, or price
+//if type === above return objValue > number
+//if type === below return objValue < number
+//return the final filtered array
+
+
+//CODE HERE
+function filterByProperty(property, number, type){
+  let emptyArray = [];
+  for(let i =0; i < foodArr.length; i++){
+    if(type === "above"){
+      if(foodArr.property > number){
+        emptyArray.push();
+        //return number; ?????
+      }
+    }else if(type === "below"){
+      if(foodArr.property < number){
+        //return number;
+      }
+        
+    }
+  }
+  //return final array;
+  }
+ 
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -216,3 +243,4 @@ console.log(filteredFood);
 */
 
 //CODE HERE
+console.log();
