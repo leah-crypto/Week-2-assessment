@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,39 +18,57 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
 //CODE HERE
-//const cart = [ {name: 'pizza', price: 9.99}, {name: 'pasta', price: 8.99}, {name: "salad", price: 7.99} ];
-let acc = 0;
 
-const summedPrice = cart.reduce((name, price => name + price));
+// let sum = 0;
+// for (let n of cart){
+//     sum +=n;
+// }
+// cart = [9.99, 8.99, 7.99];
+//let allPrice = cart.price;
 
+const summedPrice = cart.reduce((accumulator, currentValue) => {
+  ///with this one I feel like its not working becuase its not acessing price
+  return accumulator + currentValue.price;
+}, 0);
 console.log(summedPrice);
 
+// console.log(summedPrice);
+// const value = cart.reduce(callback[ initialValue]);
 
+// cart.reduce(function())
 
-//const newSummedPrice = cart.reduce((a, c) => {a + c}, 10)
-//(function(acc, curr)){
-   // return acc + curr;
-//}
+// const summedPrice = cart.reduce(function(price, price, price){
+//     return price+price+price;
+// });
 
+//     console.log(summedPrice);
+//name, price => name + price));
 
+// const summedPrice = cart.reduce(function (price){
+//     return cart.price +cart.price+cart.price;
+//   });
 
+//   console.log(summedPrice);
 
-
+// const newSummedPrice = cart.reduce((a, c) => {a + c}, 10){
+// //(function(acc, curr)){
+//    return a + c;
+// }
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -69,11 +86,20 @@ console.log(summedPrice);
 */
 
 //CODE HERE
+// let cartTotal = 26.97;
+// let couponValue = 5.99;
+// let tax = .06;
+//look up best methods to calcuate tax to figure out how to do it?
 
-// function calcFinalPrice(cartTotal, couponValue, tax){
-
-// }
-
+function calcFinalPrice(cartTotal, couponValue, tax){
+    cartTotal = summedPrice;
+    //let timeTax = cartTotal * tax;
+    let addTax = cartTotal + tax;
+    let minusCoupon = addTax - couponValue;
+    return minusCoupon;
+        //console.log(cartTotal + tax - couponValue);
+ }
+console.log(calcFinalPrice);
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -92,8 +118,14 @@ console.log(summedPrice);
     and why you chose those data types. 
 
     Your object should have at least 4 properties. 
+
 */
 
+/*  PLAN-   restruant would need info about:
+    card info like card number
+    contact info like phone or email
+    personal info like name
+    a way to track and sort the transaction like an id for primary key
 /*
     TEXT ANSWER HERE
 First I choose all of the card information like the number, experation date, and cvc
@@ -108,14 +140,14 @@ Finally I of course added in the first and last name of the customer and also a 
 */
 
 //CODE HERE
-const customer = {
-    transactionId: Ghki780
-    cardNum: 78547909;
-    exp: 10/26;
-    cvc: 567;
-    zip: 67893
-    email: "jonDoe@gmail.com";
-    phone: 817-545-9875;
-    firstName: "Jon";
-    lastName: "Doe";
-}
+// const customer = {
+//     transactionId: Ghki780,
+//     cardNum: 78547909,
+//     exp: 10/26,
+//     cvc: 567,
+//     zip: 67893,
+//     email: "jonDoe@gmail.com",
+//     phone: 817-545-9875,
+//     firstName: "Jon",
+//     lastName: "Doe"
+// }

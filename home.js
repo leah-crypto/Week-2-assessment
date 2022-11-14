@@ -24,11 +24,11 @@
 //CODE HERE
 
 
-// const greetUser = (username) =>{
-//     return(`Welcome back ${username}`); //not sure if it should be this.username or not
-// }
+const greetUser = (username) =>{
+    return(`Welcome back ${username}`);
+}
 
-// console.log(username("Andrew")); // not sure if syntax right here
+console.log(greetUser("Andrew")); 
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -54,13 +54,18 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-// function canWeDeliver(zipCode){
-//     if(zipCode === deliveryAreaZipCodes){ //I fell this part isnt right
-//         return("You are in delivery range!") //not sure if it should be return or console.log
-//     }else{
-//         return("Sorry, we cant deliver to that address.")
-//     } //now thinking this is all wrong. Need to use a loop somehow
-// }
+function canWeDeliver(zipCode){
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(zipCode === deliveryAreaZipCodes){ 
+            console.log("You are in delivery range!") //not sure if it should be return or console.log
+        }else{
+            console.log("Sorry, we cant deliver to that address.")
+        } //now thinking this is all wrong. Need to use a loop somehow
+    }
+   
+
+    console.log(canWeDeliver(84606));
+    console.log(canWeDeliver(85205));
 
 /* 
     Problem 2 Continued
@@ -80,8 +85,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+function canWeDeliver2(zipCode){
+    if(zipCode.includes(deliveryAreaZipCodes)){
+        console.log("You are in delivery range!");
+    }else{
+        console.log("Sorry, we cant deliver to that address.");
+    }
+}
 
-
+console.log(canWeDeliver2(84606));
+console.log(canWeDeliver2(85205));
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -106,35 +119,39 @@ const deals = [
     }
 ]
 
-/*
-    The owner has decided to take the 15% off
-    deal down to 10%.
+// /*
+//     The owner has decided to take the 15% off
+//     deal down to 10%.
 
-    Reassign the value of the first deal's title
-    to be itself, but use the `replace` method
-    to replace the 15 with a 10.
-*/
+//     Reassign the value of the first deal's title
+//     to be itself, but use the `replace` method
+//     to replace the 15 with a 10.
+// */
 
-//CODE HERE
+// //CODE HERE
 
-let title = title.replace('15% Off!', '10% Off!');
-console.log(deals);
+// let title = title.replace('15% Off!', '10% Off!');
+// console.log(deals); //should I use chaining???
 
-//ReferenceError: Cannot access 'title' before initialization
-/*
-    The restaurant is going to continue its
-    family deal for another month. 
+// //ReferenceError: Cannot access 'title' before initialization
 
-    Reassign the value of the second deal's desc
-    to be itself, but use the `replace` method
-    to replace the word March with April.
+deals[0].title = deals[0].title.replace("15", "10");
 
-    You should also make sure that there is no
-    whitespace in this string, since it seems
-    to be displaying wrong on the live site.
-*/
+// /*
+//     The restaurant is going to continue its
+//     family deal for another month. 
 
-//CODE HERE
+//     Reassign the value of the second deal's desc
+//     to be itself, but use the `replace` method
+//     to replace the word March with April.
 
-desc = desc.replace('March', 'April');
-console.log(deals); //dont forget whitespace
+//     You should also make sure that there is no
+//     whitespace in this string, since it seems
+//     to be displaying wrong on the live site.
+// */
+
+// //CODE HERE
+deals[0].desc = deals[0].desc.replace("March", "April").trim();
+
+// desc = desc.replace('March', 'April');
+// console.log(deals); //dont forget whitespace

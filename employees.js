@@ -19,139 +19,147 @@
     stored on the object.
 */
 
-//CODE HERE
-class Employee{
-    constructor(name, shifts){
-        this.name = "Leah";
-        this.shifts = "Thursday", "Saturday";
-    }
-    getSchedule(){
-        console.log(this.name, 'works on', this.shifts);
-        }
-   
-    }
+// //CODE HERE
+class Employee {
+  constructor(name, shifts) {
+    this.name = "Leah";
+    this.shifts = "Thursday", "Saturday";
     
-   
+  }
+  getSchedule() {
+    //return this.name, this.shifts;
+    console.log(this.name, "works on", this.shifts);
+  }
+  
+}
 
 
-/*
-    Create a new instance of your class.
-    Save it to a variable called `empOne`.
+// /*
+//     Create a new instance of your class.
+//     Save it to a variable called `empOne`.
 
-    You can use this sample data or make
-    up your own:
-    name: Jess
-    shifts: weekday mornings, weekday afternoons
-*/
+//     You can use this sample data or make
+//     up your own:
+//     name: Jess
+//     shifts: weekday mornings, weekday afternoons
+// */
 
-//CODE HERE
+// // //CODE HERE
 
-let empOne = new Employee("Jess", "weekday mornings, weekday afternoons");
+let empOne = new Employee(
+  { name: "Jess" }, // maybe we dont need the name and shift part?
+  { shifts: "weekday mornings, weekday afternoons" }
 
-/*
-    Call the `getSchedule` method on the
-    `empOne` object.
-*/
+);
 
-//CODE HERE
-getSchedule(empOne);
+// //console.log(empOne);
+// // console.log(getSchedule);
 
-/*
-    Make a copy of the empOne object
-    using the spread operator.
-    Save it to a variable called `empTwo`.
+// // /*
+// //     Call the `getSchedule` method on the
+// //     `empOne` object.
+// // */
 
-    Change the name of `empTwo` to 'Nick'.
+// // //CODE HERE
 
-    Hint: you can do this inline with the 
-    spread operator or reassign it using 
-    dot or bracket notation.
-*/
+empOne.getSchedule();
+// /*
+//     Make a copy of the empOne object
+//     using the spread operator.
+//     Save it to a variable called `empTwo`.
 
-//CODE HERE
-let empTwo = [...empOne];
+//     Change the name of `empTwo` to 'Nick'.
 
-empTwo.name = "Nick";
+//     Hint: you can do this inline with the 
+//     spread operator or reassign it using 
+//     dot or bracket notation.
+// */
 
+// //CODE HERE
+// let empTwo = [...empOne];     //TypeError: empOne is not iterable
 
-//////////////////PROBLEM 2////////////////////
-/*  
-    Write a class called Manager that *extends* 
-    the Employee class. In the constructor, 
-    make sure you require all of the parameters 
-    from the Employee class as well as 1 
-    new one: employees, which will be an array of 
-    employees that report to this manager. 
-    (Hint: don't forget to call the super function)
+// empOne.name = "Nick";
+// console.log(empTwo)
+// //////////////////PROBLEM 2////////////////////
+// /*  
+//     Write a class called Manager that *extends* 
+//     the Employee class. In the constructor, 
+//     make sure you require all of the parameters 
+//     from the Employee class as well as 1 
+//     new one: employees, which will be an array of 
+//     employees that report to this manager. 
+//     (Hint: don't forget to call the super function)
 
-    Create a method called `getEmployees` that
-    console.logs a string:
-    [NAME] manages [EMPLOYEES]
-    Where NAME and EMPLOYEES reference the values
-    stored on the object.
+//     Create a method called `getEmployees` that
+//     console.logs a string:
+//     [NAME] manages [EMPLOYEES]
+//     Where NAME and EMPLOYEES reference the values
+//     stored on the object.
 
-    Create a second method called `addEmployee`
-    that takes in one argument, `emp`, which
-    should be a string of an employee name.
-    The function should push the name into 
-    the employees array. 
-*/
+//     Create a second method called `addEmployee`
+//     that takes in one argument, `emp`, which
+//     should be a string of an employee name.
+//     The function should push the name into 
+//     the employees array. 
+// */
 
-//CODE HERE
+// //CODE HERE
 
 class Manager extends Employee {
-    constructor(employees, name, shifts){
+    constructor(name,shifts,employee){
         super(name, shifts)
-        this.employees = ["Willow","Zane", "Kirey", "Dylan"];
+        this.employees = employee//["Willow","Zane", "Kirey", "Dylan"];
     }
     getEmployees(){
-        console.log(this.name, 'manages' this.employees);
+        console.log(this.name, 'manages', this.employees);
     }
-    addEmployee(){
-        let emp = "Jeany"; //i feel this isnt right
-        employees.push();
+    addEmployee(emp){
+        this.name = "Jeany"; //i feel this isnt right???
+        this.employees = "Leah", "Dylan";
+        getEmployees.push(emp);
     }
 }
 
-/*
-    Create a new instance of your class.
-    Save it to a variable called `manager`.
+console.log(Manager);
+// // /*
+// //     Create a new instance of your class.
+// //     Save it to a variable called `manager`.
 
-    You can use this sample data or make
-    up your own:
-    name: Winston
-    shifts: weekday mornings, weekday afternoons
-    employees: Cece and Schmidt
-*/
+// //     You can use this sample data or make
+// //     up your own:
+// //     name: Winston
+// //     shifts: weekday mornings, weekday afternoons
+// //     employees: Cece and Schmidt
+// // */
 
-//CODE HERE
+// // //CODE HERE
 
-let manager = new Employee("name: Winston
-    shifts: weekday mornings, weekday afternoons
-    employees: Cece and Schmidt");
-/*
-    Call the `getEmployees` method on the
-    `manager` object.  
-*/
+let manager = new Employee({name: "Winston"}, 
+    {shifts: "weekday mornings, weekday afternoons"},
+    {employees: "Cece and Schmidt"});
+// // /*
+// //     Call the `getEmployees` method on the
+// //     `manager` object.
+// // */
 
-//CODE HERE
+// // //CODE HERE
 
 manager.getEmployees();
 
-/*
-    Call the `addEmployee` method on the 
-    `manager` object passing in the string 
-    'Coach' or whatever name you'd like.
-*/
+// // /*
+// //     Call the `addEmployee` method on the
+// //     `manager` object passing in the string
+// //     'Coach' or whatever name you'd like.
+// // */
 
-//CODE HERE 
+// // //CODE HERE
 manager.addEmployee("Coach");
-/*
-    Call the `getEmployees` method on the
-    `manager` object again to confirm 
-    that an employee was added.
-*/
+// // /*
+// //     Call the `getEmployees` method on the
+// //     `manager` object again to confirm
+// //     that an employee was added.
+// // */
 
-//CODE HERE
+// // //CODE HERE
 
-manager.getEmployees(); //may have to console.log
+ manager.getEmployees(); //may have to console.log
